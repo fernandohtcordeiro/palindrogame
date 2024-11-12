@@ -11,8 +11,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Courier New', monospace;
+    color: white;
 }
-
 
 body::before {
     background-image: url("img/code.png");
@@ -26,23 +27,6 @@ body::before {
     opacity: 0.4;
 }
 
-.container__form, body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .container__form, input, button {
-    font-size: 18px;
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  .container__form #result {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
 .container {
     width: 1200px;
     height: 600px;
@@ -67,6 +51,28 @@ body::before {
 .container__informacoes {
     flex: 1;
     padding: 20px;
+    text-align: center;
+}
+
+.container__form, input, button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container__form #result {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input, button {
+    background-color: #555;
+    color: white;
+    border: none;
+}
+
+input:focus, button:hover {
+    background-color: #777;
 }
 
 .container__botao {
@@ -93,9 +99,7 @@ h1 {
     font-size: 72px;
 }
 
-h2,
-p,
-button {
+h2, p, button {
     font-family: 'Inter', sans-serif;
 }
 
