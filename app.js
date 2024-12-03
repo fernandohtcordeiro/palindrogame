@@ -1,6 +1,6 @@
 function checkPalindrome() {
   const inputField = document.getElementById("inputText");
-  const trophyIcon = document.getElementById("trophyIcon");
+  const trofeuicon = document.getElementById("trofeuicon");
   const mensagem = document.getElementById("mensagem");
 
   // Captura e limpa o texto
@@ -11,7 +11,7 @@ function checkPalindrome() {
   if (cleanedText.length === 0) {
       mensagem.innerHTML = 'Você não digitou!';
       mensagem.className = "red";
-      trophyIcon.classList.add("hidden");
+      trofeuicon.classList.add("hidden");
       return;
   }
 
@@ -20,11 +20,11 @@ function checkPalindrome() {
   if (isPalindrome) {
       mensagem.innerHTML = '<span style="color: white;">Você</span> acertou!';
       mensagem.className = "green";
-      trophyIcon.classList.remove("hidden");
+      trofeuicon.classList.remove("hidden");
   } else {
       mensagem.innerHTML = '<span style="color: white;">Você</span> errou!';
       mensagem.className = "red";
-      trophyIcon.classList.add("hidden");
+      trofeuicon.classList.add("hidden");
   }
 }
 
@@ -38,6 +38,6 @@ function resetForm() {
   mensagem.className = "";
 
   // Esconde o troféu, caso visível
-  const trophyIcon = document.getElementById("trophyIcon");
-  trophyIcon.classList.add("hidden");
+  const trofeuicon = document.getElementById("trofeuicon");
+  trofeuicon.classList.add("hidden");
 }
