@@ -65,6 +65,37 @@ body::before {
     font-weight: bold;
 }
 
+.container__form {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 2px; /* Espaçamento entre os itens */
+}
+
+.container__form input {
+    flex: 1; /* Faz o campo de entrada ocupar mais espaço, se necessário */
+    max-width: 400px; /* Limita a largura máxima */
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #555;
+    color: white;
+}
+
+.container__form button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #1875E8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container__form button:hover {
+    background-color: #0a5bb5;
+}
+
+
 input, button {
     background-color: #555;
     color: white;
@@ -106,4 +137,27 @@ h2, p, button {
 h2 {
     font-size: 32px;
     font-weight: 400;
+}
+
+.hidden {
+    display: none;
+}
+
+#mensagem.green {
+    color: #28a745;
+}
+
+#mensagem.red {
+    color: #dc3545;
+}
+
+.container__form button:last-child {
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.container__form button:last-child:hover {
+    background-color: #e53935;
 }

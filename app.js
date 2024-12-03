@@ -1,52 +1,43 @@
 function checkPalindrome() {
-  let text = document.getElementById("inputText").value;
-  let length = text.length;
+  const inputField = document.getElementById("inputText");
+  const trophyIcon = document.getElementById("trophyIcon");
+  const mensagem = document.getElementById("mensagem");
 
-  for (let i = 0; i < length / 2; i++) {
-    if (text[i] !== text[length - 1 - i]) {
-      document.getElementById("resultado").innerText = "Não é um palíndromo!";
+  // Captura e limpa o texto
+  const text = inputField.value.trim();
+  const cleanedText = text.replace(/[\W_]/g, '').toLowerCase();
+
+  // Validação para entrada vazia
+  if (cleanedText.length === 0) {
+      mensagem.innerHTML = 'Você não digitou!';
+      mensagem.className = "red";
+      trophyIcon.classList.add("hidden");
       return;
-    }
   }
 
-  document.getElementById("resultado").innerText = "É um palíndromo!";
+  // Verifica se é um palíndromo
+  const isPalindrome = cleanedText === cleanedText.split('').reverse().join('');
+  if (isPalindrome) {
+      mensagem.innerHTML = '<span style="color: white;">Você</span> acertou!';
+      mensagem.className = "green";
+      trophyIcon.classList.remove("hidden");
+  } else {
+      mensagem.innerHTML = '<span style="color: white;">Você</span> errou!';
+      mensagem.className = "red";
+      trophyIcon.classList.add("hidden");
+  }
 }
 
-function checkPalindrome() {
-  let text = document.getElementById("inputText").value;
-  let cleanedText = text.replace(/[\W_]/g, '').toLowerCase(); // Limpeza e normalização
-  let length = cleanedText.length;
+function resetForm() {
+  // Limpa o campo de entrada
+  document.getElementById("inputText").value = "";
 
-  for (let i = 0; i < length / 2; i++) {
-    if (cleanedText[i] !== cleanedText[length - 1 - i]) {
-      document.getElementById("resultado").innerText = "Não é um palíndromo!";
-      return;
-    }
-  }
+  // Limpa a mensagem e remove estilos
+  const mensagem = document.getElementById("mensagem");
+  mensagem.innerHTML = "";
+  mensagem.className = "";
 
-  document.getElementById("resultado").innerText = "É um palíndromo!";
-}
-
-
-function checkPalindrome() {
-  let text = document.getElementById("inputText").value;
-  let cleanedText = text.replace(/[\W_]/g, '').toLowerCase(); // Remove espaços e pontuação e transforma em minúsculas
-  let length = cleanedText.length;
-  
-  if (length === 0) {
-    document.getElementById("resultado").innerText = "Por favor, digite uma palavra ou frase.";
-    document.getElementById("resultado").style.color = "orange";
-    return;
-  }
-
-  for (let i = 0; i < length / 2; i++) {
-    if (cleanedText[i] !== cleanedText[length - 1 - i]) {
-      document.getElementById("resultado").innerText = "Não é um palíndromo!";
-      document.getElementById("resultado").style.color = "red";
-      return;
-    }
-  }
-
-  document.getElementById("resultado").innerText = "É um palíndromo!";
-  document.getElementById("resultado").style.color = "green";
+  // Esconde o troféu, caso visível
+  const trophyIcon = document.getElementById("trophyIcon");
+  trophyIcon.classList.add("hidden");
 }
