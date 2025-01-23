@@ -6,10 +6,10 @@ function checkPalindrome() {
 
   // Captura e limpa o texto
   const text = inputField.value.trim();
-  const cleanedText = text.replace(/[\W_]/g, '').toLowerCase();
+  const campoTexto = text.replace(/[\W_]/g, '').toLowerCase();
 
   // Validação para entrada vazia
-  if (cleanedText.length === 0) {
+  if (campoTexto.length === 0) {
     mensagem.innerHTML = 'Você não digitou!';
     mensagem.className = "red";
     trofeuicon.classList.add("hidden");
@@ -17,8 +17,8 @@ function checkPalindrome() {
     return;
   }
 
-  // Verifica se é um palíndromo
-  const isPalindrome = cleanedText === cleanedText.split('').reverse().join('');
+  // Verifica se é um palíndromo dividi-las em um array de substrings
+  const isPalindrome = campoTexto === campoTexto.split('').reverse().join('');
   if (isPalindrome) {
     mensagem.innerHTML = '<span style="color: white;">Você</span> acertou!';
     mensagem.className = "green";
